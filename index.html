@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DentTalks presents Independence@Scale | The Third Option for Independent Dentistry</title>
+  <meta name="description" content="A DentTalks educational series for independent dental owners exploring scale, AI, automation, operations, enterprise value, alliances, M&A and strategic optionality." />
+  <meta name="theme-color" content="#071a2e" />
+  <meta property="og:title" content="DentTalks presents Independence@Scale" />
+  <meta property="og:description" content="The Third Option for Independent Dentistry — a 9-month education series on scale, AI, value creation and optionality." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/intro-webinar-flyer.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23071a2e%22/><text x=%2250%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2255%22 fill=%22%234bc2c7%22 font-family=%22Arial%22>@</text></svg>" />
+  <style>
+    :root{
+      --navy:#071a2e;--navy2:#0b2c48;--ink:#102138;--teal:#36b6bd;--teal2:#68d3d0;
+      --ice:#edf7f7;--paper:#fbfcfd;--muted:#607386;--line:#dbe5ea;--gold:#c9a764;
+      --radius:24px;--shadow:0 20px 60px rgba(6,28,49,.15);--max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .serif{font-family:Georgia,"Times New Roman",serif}
+    .eyebrow{letter-spacing:.15em;text-transform:uppercase;font-size:.78rem;font-weight:800;color:var(--teal)}
+    nav{position:sticky;top:0;z-index:20;background:rgba(7,26,46,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{color:white;font-weight:800;font-size:1.38rem}.brand span{color:var(--teal2)}
+    .nav-links{display:flex;gap:24px;align-items:center;color:#dbe8ef;font-size:.93rem}
+    .nav-links a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:13px 20px;font-weight:800;border:1px solid transparent;transition:.2s ease;cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg,var(--teal),#2aa3b1);color:#041522;box-shadow:0 10px 30px rgba(54,182,189,.22)}
+    .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.04)}
+    .btn-secondary{border-color:rgba(255,255,255,.25);color:white;background:rgba(255,255,255,.06)}
+    .btn-secondary:hover{background:rgba(255,255,255,.11)}
+    .btn-light{border-color:#b9cbd2;background:white;color:var(--ink)}
+    .btn-light:hover{border-color:var(--teal)}
+    .btn[aria-disabled="true"]{opacity:.68;cursor:not-allowed;pointer-events:none}
+    .hero{overflow:hidden;position:relative;background:
+      radial-gradient(circle at 82% 18%,rgba(54,182,189,.18),transparent 24%),
+      linear-gradient(135deg,#06182a 0%,#0a2d49 72%,#123b5b 100%);color:white;padding:90px 0 72px}
+    .hero:after{content:"";position:absolute;inset:auto -6% -160px auto;width:520px;height:520px;border:1px solid rgba(104,211,208,.18);border-radius:50%}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.17fr .83fr;gap:62px;align-items:center}
+    .presented{display:inline-flex;align-items:center;gap:10px;color:#d7e8ef;margin-bottom:24px;font-weight:700}.presented strong{font-size:1.2rem;color:white}.presented:before{content:"";width:42px;height:2px;background:var(--teal)}
+    h1{font-size:clamp(3rem,7vw,6.25rem);line-height:.92;letter-spacing:-.045em;margin:0 0 20px;font-weight:500}
+    h1 .at{color:var(--teal2)}
+    .hero h2{font-size:clamp(1.35rem,2.5vw,2.15rem);font-weight:600;color:var(--teal2);margin:0 0 24px}
+    .hero-quote{font-size:clamp(1.2rem,2.1vw,1.65rem);max-width:760px;margin:0 0 18px;padding-left:18px;border-left:3px solid var(--teal);color:#f6fbfd;font-family:Georgia,serif}
+    .hero p{font-size:1.05rem;color:#c9dbe4;max-width:720px;margin:0 0 30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{position:relative;min-height:510px;border-radius:38px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);box-shadow:0 34px 90px rgba(0,0,0,.28)}
+    .hero-card img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;position:absolute;inset:0}
+    .hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(4,18,32,.9) 100%)}
+    .presenter-tag{position:absolute;z-index:2;left:24px;right:24px;bottom:22px}.presenter-tag .eyebrow{color:var(--teal2)}.presenter-tag h3{margin:4px 0 0;font-size:1.7rem}.presenter-tag p{margin:3px 0 0;font-size:.9rem;color:#d9e7ed}
+    section{padding:86px 0}
+    .section-head{max-width:780px;margin-bottom:42px}.section-head h2{font-size:clamp(2rem,4vw,3.45rem);line-height:1.05;letter-spacing:-.03em;margin:7px 0 14px}.section-head p{color:var(--muted);font-size:1.05rem}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .info-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 12px 35px rgba(16,33,56,.05)}
+    .info-card .num{font-family:Georgia,serif;color:var(--teal);font-size:2.1rem;margin-bottom:10px}.info-card h3{margin:0 0 8px;font-size:1.05rem}.info-card p{margin:0;color:var(--muted);font-size:.93rem}
+    .band{background:var(--navy);color:white}.band .section-head p{color:#c9dbe4}
+    .roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .phase{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.045);border-radius:30px;padding:28px}
+    .phase .phase-no{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:rgba(54,182,189,.18);color:var(--teal2);font-weight:900}
+    .phase h3{font-size:1.35rem;margin:14px 0 8px}.phase>p{color:#a9c0ce;margin:0 0 20px;font-size:.92rem}
+    .episodes{display:grid;gap:11px}.episode{padding:12px 0;border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:32px 1fr;gap:10px}.episode b{color:var(--teal2)}.episode span{color:#e4eef3;font-size:.91rem}
+    .intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}.flyer{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+    .milestone{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}.milestone:first-of-type{border-top:none}.dot{width:12px;height:12px;border-radius:50%;margin-top:7px;background:var(--teal);box-shadow:0 0 0 6px rgba(54,182,189,.12)}.milestone h4{margin:0 0 4px}.milestone p{margin:0;color:var(--muted)}
+    .audience{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.audience-card{border-radius:22px;padding:22px;background:linear-gradient(180deg,#fff,#f3f9fa);border:1px solid var(--line)}.audience-card h3{font-size:1rem;margin:0 0 7px}.audience-card p{font-size:.9rem;color:var(--muted);margin:0}
+    .presenters{display:grid;grid-template-columns:1fr 1fr;gap:20px}.presenter{background:white;border:1px solid var(--line);border-radius:26px;padding:28px}.presenter h3{margin:6px 0 8px;font-size:1.45rem}.presenter p{color:var(--muted);margin:0}
+    .boundary{background:linear-gradient(135deg,#eaf8f7,#f7fbfc);border:1px solid #c9e8e7;border-radius:30px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.boundary h3{margin:0 0 8px}.boundary p{margin:0;color:#526978}.boundary .business{border-left:1px solid #c4dfdf;padding-left:28px}
+    .cta{background:linear-gradient(135deg,#071a2e,#0f3a59);color:white;border-radius:38px;padding:50px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;box-shadow:var(--shadow)}.cta h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.04;margin:7px 0 12px}.cta p{color:#c8dce4}.cta-actions{display:flex;flex-direction:column;gap:12px}.status{font-size:.83rem;color:#96b1c0;margin-top:8px}
+    footer{padding:40px 0 54px;color:#718493;font-size:.88rem}.footer-row{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-row strong{color:var(--ink)}
+    @media(max-width:900px){.nav-links{display:none}.hero-grid,.intro-grid,.cta,.boundary{grid-template-columns:1fr}.hero-card{min-height:430px;max-width:570px}.grid4,.audience{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr}.presenters{grid-template-columns:1fr}.boundary .business{border-left:0;border-top:1px solid #c4dfdf;padding-left:0;padding-top:24px}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:70px 0 54px}.grid4,.audience{grid-template-columns:1fr}.hero-actions{flex-direction:column}.btn{width:100%}.cta{padding:30px 24px}.presented:before{width:26px}section{padding:68px 0}.hero-card{min-height:390px}}
+  </style>
+  <script src="site-config.js" defer></script>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Dent<span>Talks</span></a>
+      <div class="nav-links">
+        <a href="#about">Why now</a><a href="#roadmap">Roadmap</a><a href="#presenters">Presenters</a><a href="#join">Join</a>
+      </div>
+      <a class="btn btn-primary js-join" href="#join">Join the Series</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="presented"><strong>DentTalks</strong> presents</div>
+          <h1 class="serif">Independence<span class="at">@</span>Scale</h1>
+          <h2>The Third Option for Independent Dentistry</h2>
+          <div class="hero-quote">Independent does not have to mean being alone.</div>
+          <p>A practical, education-first series for dental owners who want to understand scale, AI, automation, enterprise value, alliances, M&amp;A and strategic optionality—without giving up independent thinking.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary js-join" href="#join">Join the DentTalks Series</a>
+            <a class="btn btn-secondary" href="#roadmap">Explore the 9-Month Roadmap</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Clark Caflisch, featured presenter">
+          <img src="assets/clark-caflisch-2026.png" alt="Clark Caflisch" />
+          <div class="presenter-tag"><div class="eyebrow">Featuring</div><h3>Clark Caflisch</h3><p>with Dr. Vajahat “VJ” Yar Khan</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">What this series is about</div><h2>Build a stronger practice before you decide what comes next.</h2><p>Independent owners are being asked to solve more complex problems in technology, revenue cycle, staffing, compliance, cybersecurity, data and capital. DentTalks brings those subjects into one structured curriculum—and looks at the full spectrum between “go it alone” and “sell everything.”</p></div>
+        <div class="grid4">
+          <div class="info-card"><div class="num">01</div><h3>Scale</h3><p>Understand what scale actually buys: capability, expertise, purchasing leverage, data and management depth.</p></div>
+          <div class="info-card"><div class="num">02</div><h3>Automation</h3><p>Learn where AI and automation create operating leverage—and where human judgment still matters.</p></div>
+          <div class="info-card"><div class="num">03</div><h3>Value</h3><p>Build cleaner financials, stronger EBITDA, better systems, more predictable operations and transaction readiness.</p></div>
+          <div class="info-card"><div class="num">04</div><h3>Optionality</h3><p>Explore ownership, alliances, aggregation, M&amp;A and liquidity without assuming one path is right for every owner.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="band">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">18 episodes • twice monthly</div><h2>A 9-month owner-level curriculum.</h2><p>Each episode stands alone. Together, they form a practical curriculum for building an institution-quality independent dental enterprise.</p></div>
+        <div class="roadmap">
+          <article class="phase"><div class="phase-no">I</div><h3>Understand the New Dental Economy</h3><p>Months 1–3 • Market, ownership models, scale, AI and financial intelligence.</p><div class="episodes">
+            <div class="episode"><b>01</b><span>The New Economics of Independent Dentistry</span></div><div class="episode"><b>02</b><span>The Dental Consolidation Map</span></div><div class="episode"><b>03</b><span>What the World Can Teach Independent Dentistry</span></div><div class="episode"><b>04</b><span>What Does Scale Actually Buy You?</span></div><div class="episode"><b>05</b><span>The AI Operating Revolution in Dentistry</span></div><div class="episode"><b>06</b><span>Numbers Before Narratives</span></div>
+          </div></article>
+          <article class="phase"><div class="phase-no">II</div><h3>Build the Operating Machine</h3><p>Months 4–6 • Revenue cycle, people, technology, compliance and high-quality growth.</p><div class="episodes">
+            <div class="episode"><b>07</b><span>Revenue Cycle Is Not a Billing Department</span></div><div class="episode"><b>08</b><span>Human Capital at Scale</span></div><div class="episode"><b>09</b><span>The Dental Technology Architecture</span></div><div class="episode"><b>10</b><span>Build, Buy or Partner?</span></div><div class="episode"><b>11</b><span>Cybersecurity, Compliance &amp; Clinical Autonomy</span></div><div class="episode"><b>12</b><span>Growing EBITDA Without Destroying the Practice</span></div>
+          </div></article>
+          <article class="phase"><div class="phase-no">III</div><h3>Create Optionality</h3><p>Months 7–9 • Valuation, deal mechanics, diligence, alliances and liquidity strategy.</p><div class="episodes">
+            <div class="episode"><b>13</b><span>What Is Your Practice Really Worth?</span></div><div class="episode"><b>14</b><span>Anatomy of a Dental Deal</span></div><div class="episode"><b>15</b><span>Due Diligence Before the Buyer Arrives</span></div><div class="episode"><b>16</b><span>Alliance Readiness</span></div><div class="episode"><b>17</b><span>Aggregation, Competitive Tension &amp; Buyer Strategy</span></div><div class="episode"><b>18</b><span>Liquidity Is an Event. Optionality Is a Strategy.</span></div>
+          </div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="launch">
+      <div class="wrap intro-grid">
+        <div class="flyer"><img src="assets/intro-webinar-flyer.png" alt="Independence@Scale introductory webinar flyer" /></div>
+        <div>
+          <div class="eyebrow">The series has begun</div>
+          <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.06;margin:8px 0 14px">Start with the introduction. Then follow the full roadmap.</h2>
+          <p style="color:var(--muted)">The introductory DentTalks webinar launched the series on August 28, 2026. The next live session begins the formal curriculum.</p>
+          <div class="milestone"><div class="dot"></div><div><h4>Introductory Webinar — August 28, 2026</h4><p>Big ideas, curriculum preview and the roadmap for the full series.</p></div></div>
+          <div class="milestone"><div class="dot"></div><div><h4 id="next-session-title">Episode 1 — The New Economics of Independent Dentistry</h4><p id="next-session-date">Date to be announced</p></div></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-primary js-recording" href="#join">Watch / Request the Intro</a><a class="btn btn-light js-join" href="#join">Get the Next Session Invite</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#f1f6f8">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Who should attend</div><h2>Built for the full spectrum of independent ownership.</h2><p>The same problem looks different at different scales. The curriculum deliberately addresses each level.</p></div>
+        <div class="audience">
+          <div class="audience-card"><h3>Single-office owners</h3><p>Build minimum viable capability without recreating a corporate office.</p></div>
+          <div class="audience-card"><h3>2–5 location groups</h3><p>Standardize before complexity compounds faster than management capacity.</p></div>
+          <div class="audience-card"><h3>5–20+ location groups</h3><p>Institutionalize reporting, leadership, data, specialist functions and governance.</p></div>
+          <div class="audience-card"><h3>Worldwide viewers</h3><p>Use the principles globally while recognizing that legal and transaction structures vary by jurisdiction.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="presenters">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Operators, not spectators</div><h2>Presented from the intersection of dentistry, operations, technology and transactions.</h2></div>
+        <div class="presenters">
+          <article class="presenter"><div class="eyebrow">Clark Caflisch</div><h3>DSO operations, alliances, M&amp;A and dental technology</h3><p>Clark brings current and prior DSO operating leadership, Alliance formation and transaction experience, governance and integration expertise, and a long history in dental practice-management technology.</p></article>
+          <article class="presenter"><div class="eyebrow">Dr. Vajahat “VJ” Yar Khan</div><h3>Dentist-operator, scaled services and technology</h3><p>VJ brings the perspective of a practicing dentist and multi-location operator, along with experience building scaled revenue-cycle/back-office services and dental technology infrastructure.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap boundary">
+        <div><div class="eyebrow">DentTalks</div><h3>Education stays education.</h3><p>DentTalks is the media and educational platform. Sessions are designed to deliver useful knowledge even for dentists who never use an affiliated service, join a platform or pursue a transaction.</p></div>
+        <div class="business"><div class="eyebrow">Independence@Scale</div><h3>Business exploration is separate.</h3><p>Independence@Scale is a separate member-owned business initiative. Where accredited CE is offered, sales, investment discussions and business solicitation remain outside the CE session. Interested owners can request a separate, counsel-approved briefing.</p></div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="wrap cta">
+        <div><div class="eyebrow">Stay in the conversation</div><h2>Join the DentTalks Independence@Scale series.</h2><p>Attend the live sessions, receive the roadmap, and follow the curriculum as we examine what it takes to preserve independence while building the capabilities of scale.</p><div class="status" id="cta-status">Registration link can be connected to Google Forms, Calendly, HubSpot, GoHighLevel, Formspree or your preferred CRM.</div></div>
+        <div class="cta-actions"><a class="btn btn-primary js-join" href="#">Join the Series</a><a class="btn btn-secondary js-recording" href="#">Watch the Introduction</a><a class="btn btn-secondary js-business" href="#">Request a Separate Business Briefing</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row"><div><strong>DentTalks</strong> presents Independence@Scale<br/>The Third Option for Independent Dentistry</div><div>Educational information only. Legal, tax, securities, valuation and jurisdiction-specific advice require qualified advisers.</div></div></footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded',()=>{
+      const c=window.DENTTALKS_CONFIG||{};
+      const setup=(selector,url,label)=>document.querySelectorAll(selector).forEach(a=>{if(url){a.href=url;a.target='_blank';a.rel='noopener'}else{a.href='#join';a.setAttribute('aria-disabled','true');if(label)a.textContent=label}});
+      setup('.js-join',c.joinSeriesUrl,'Registration Opening Soon');
+      setup('.js-recording',c.introRecordingUrl,'Intro Recording Coming Soon');
+      setup('.js-business',c.businessBriefingUrl,'Business Briefing — By Request');
+      if(c.nextSessionTitle)document.getElementById('next-session-title').textContent=c.nextSessionTitle;
+      if(c.nextSessionDate)document.getElementById('next-session-date').textContent=c.nextSessionDate;
+    });
+  </script>
+</body>
+</html>
