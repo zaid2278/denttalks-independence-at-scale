@@ -6,13 +6,14 @@
  */
 window.DENTTALKS_CONFIG = {
   // Registration / series invite (Google Form, Calendly, HubSpot, GoHighLevel, Formspree, etc.)
-  joinSeriesUrl: "",
+  joinSeriesUrl: "https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471",
 
   // Intro webinar recording (YouTube, Vimeo, Drive, or landing page)
-  introRecordingUrl: "",
+  // Until a recording exists, point to Eventbrite intro registration.
+  introRecordingUrl: "https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471",
 
   // Separate business-interest form or booking link (not CE registration)
-  businessBriefingUrl: "",
+  businessBriefingUrl: "https://v.denttracks.com/",
 
   // Next live session details shown on the page
   nextSessionTitle: "Episode 1 — The New Economics of Independent Dentistry",

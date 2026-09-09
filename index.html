@@ -45,7 +45,7 @@
       radial-gradient(circle at 82% 18%,rgba(54,182,189,.18),transparent 24%),
       linear-gradient(135deg,#06182a 0%,#0a2d49 72%,#123b5b 100%);color:white;padding:90px 0 72px}
     .hero:after{content:"";position:absolute;inset:auto -6% -160px auto;width:520px;height:520px;border:1px solid rgba(104,211,208,.18);border-radius:50%}
-    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
     .presented{display:inline-flex;align-items:center;gap:10px;color:#d7e8ef;margin-bottom:24px;font-weight:700}.presented strong{font-size:1.2rem;color:white}.presented:before{content:"";width:42px;height:2px;background:var(--teal)}
     h1{font-size:clamp(3rem,7vw,6.25rem);line-height:.92;letter-spacing:-.045em;margin:0 0 20px;font-weight:500}
     h1 .at{color:var(--teal2)}
@@ -53,10 +53,8 @@
     .hero-quote{font-size:clamp(1.2rem,2.1vw,1.65rem);max-width:760px;margin:0 0 18px;padding-left:18px;border-left:3px solid var(--teal);color:#f6fbfd;font-family:Georgia,serif}
     .hero p{font-size:1.05rem;color:#c9dbe4;max-width:720px;margin:0 0 30px}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-card{position:relative;width:100%;aspect-ratio:4/5;min-height:0;border-radius:38px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);box-shadow:0 34px 90px rgba(0,0,0,.28)}
-    .hero-card img{width:100%;height:100%;object-fit:cover;object-position:center 18%;position:absolute;inset:0}
-    .hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(4,18,32,.9) 100%)}
-    .presenter-tag{position:absolute;z-index:2;left:24px;right:24px;bottom:22px}.presenter-tag .eyebrow{color:var(--teal2)}.presenter-tag h3{margin:4px 0 0;font-size:1.7rem}.presenter-tag p{margin:3px 0 0;font-size:.9rem;color:#d9e7ed}
+    .hero-flyer{border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 34px 90px rgba(0,0,0,.28);background:#06182a}
+    .hero-flyer img{width:100%;height:auto;display:block}
     section{padding:86px 0}
     .section-head{max-width:780px;margin-bottom:42px}.section-head h2{font-size:clamp(2rem,4vw,3.45rem);line-height:1.05;letter-spacing:-.03em;margin:7px 0 14px}.section-head p{color:var(--muted);font-size:1.05rem}
     .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -68,15 +66,15 @@
     .phase .phase-no{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:rgba(54,182,189,.18);color:var(--teal2);font-weight:900}
     .phase h3{font-size:1.35rem;margin:14px 0 8px}.phase>p{color:#a9c0ce;margin:0 0 20px;font-size:.92rem}
     .episodes{display:grid;gap:11px}.episode{padding:12px 0;border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:32px 1fr;gap:10px}.episode b{color:var(--teal2)}.episode span{color:#e4eef3;font-size:.91rem}
-    .intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}.flyer{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+    .intro-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:start;max-width:760px}.flyer{display:none}
     .milestone{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}.milestone:first-of-type{border-top:none}.dot{width:12px;height:12px;border-radius:50%;margin-top:7px;background:var(--teal);box-shadow:0 0 0 6px rgba(54,182,189,.12)}.milestone h4{margin:0 0 4px}.milestone p{margin:0;color:var(--muted)}
     .audience{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.audience-card{border-radius:22px;padding:22px;background:linear-gradient(180deg,#fff,#f3f9fa);border:1px solid var(--line)}.audience-card h3{font-size:1rem;margin:0 0 7px}.audience-card p{font-size:.9rem;color:var(--muted);margin:0}
-    .presenters{display:grid;grid-template-columns:1fr 1fr;gap:20px}.presenter{background:white;border:1px solid var(--line);border-radius:26px;padding:28px}.presenter h3{margin:6px 0 8px;font-size:1.45rem}.presenter p{color:var(--muted);margin:0}
+    .presenters{display:grid;grid-template-columns:1fr 1fr;gap:20px}.presenter{background:white;border:1px solid var(--line);border-radius:26px;padding:22px;overflow:hidden}.presenter-photo{margin:-22px -22px 20px;aspect-ratio:4/5;max-height:340px;overflow:hidden;background:#0a2036}.presenter-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.presenter h3{margin:6px 0 8px;font-size:1.45rem}.presenter p{color:var(--muted);margin:0}
     .boundary{background:linear-gradient(135deg,#eaf8f7,#f7fbfc);border:1px solid #c9e8e7;border-radius:30px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.boundary h3{margin:0 0 8px}.boundary p{margin:0;color:#526978}.boundary .business{border-left:1px solid #c4dfdf;padding-left:28px}
     .cta{background:linear-gradient(135deg,#071a2e,#0f3a59);color:white;border-radius:38px;padding:50px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;box-shadow:var(--shadow)}.cta h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.04;margin:7px 0 12px}.cta p{color:#c8dce4}.cta-actions{display:flex;flex-direction:column;gap:12px}.status{font-size:.83rem;color:#96b1c0;margin-top:8px}
     footer{padding:40px 0 54px;color:#718493;font-size:.88rem}.footer-row{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-row strong{color:var(--ink)}
-    @media(max-width:900px){.nav-links{display:none}.hero-grid,.intro-grid,.cta,.boundary{grid-template-columns:1fr}.hero-card{max-width:480px;margin-inline:auto}.grid4,.audience{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr}.presenters{grid-template-columns:1fr}.boundary .business{border-left:0;border-top:1px solid #c4dfdf;padding-left:0;padding-top:24px}}
-    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:70px 0 54px}.grid4,.audience{grid-template-columns:1fr}.hero-actions{flex-direction:column}.btn{width:100%}.cta{padding:30px 24px}.presented:before{width:26px}section{padding:68px 0}.hero-card{max-width:100%}}
+    @media(max-width:900px){.nav-links{display:none}.hero-grid,.intro-grid,.cta,.boundary{grid-template-columns:1fr}.hero-flyer{max-width:520px;margin-inline:auto}.grid4,.audience{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr}.presenters{grid-template-columns:1fr}.boundary .business{border-left:0;border-top:1px solid #c4dfdf;padding-left:0;padding-top:24px}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:70px 0 54px}.grid4,.audience{grid-template-columns:1fr}.hero-actions{flex-direction:column}.btn{width:100%}.cta{padding:30px 24px}.presented:before{width:26px}section{padding:68px 0}.presenter-photo{max-height:300px}}
   </style>
   <script src="site-config.js" defer></script>
 </head>
@@ -87,7 +85,7 @@
       <div class="nav-links">
         <a href="#about">Why now</a><a href="#roadmap">Roadmap</a><a href="#presenters">Presenters</a><a href="#join">Join</a>
       </div>
-      <a class="btn btn-primary js-join" href="#join">Join the Series</a>
+      <a class="btn btn-primary js-join" href="#join">Reserve Your Free Seat</a>
     </div>
   </nav>
 
@@ -101,13 +99,12 @@
           <div class="hero-quote">Independent does not have to mean being alone.</div>
           <p>A practical, education-first series for dental owners who want to understand scale, AI, automation, enterprise value, alliances, M&amp;A and strategic optionality—without giving up independent thinking.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary js-join" href="#join">Join the DentTalks Series</a>
+            <a class="btn btn-primary js-join" href="#join">Reserve Your Free Seat</a>
             <a class="btn btn-secondary" href="#roadmap">Explore the 9-Month Roadmap</a>
           </div>
         </div>
-        <div class="hero-card" aria-label="Clark Caflisch, featured presenter">
-          <img src="assets/clark-caflisch-2026.jpg" alt="Clark Caflisch" />
-          <div class="presenter-tag"><div class="eyebrow">Featuring</div><h3>Clark Caflisch</h3><p>with Dr. Vajahat “VJ” Yar Khan</p></div>
+        <div class="hero-flyer">
+          <img src="assets/intro-webinar-flyer.jpg" alt="DentTalks Independence@Scale free introduction webinar" />
         </div>
       </div>
     </section>
@@ -150,7 +147,7 @@
           <p style="color:var(--muted)">The introductory DentTalks session covers how Independence@Scale works and the 18-episode roadmap. Episode 1 then begins the formal curriculum.</p>
           <div class="milestone"><div class="dot"></div><div><h4>Introductory Session — Friday, September 18, 2026</h4><p>4:00–5:00 PM CT on Zoom — how the platform works + the 18-episode roadmap.</p></div></div>
           <div class="milestone"><div class="dot"></div><div><h4 id="next-session-title">Episode 1 — The New Economics of Independent Dentistry</h4><p id="next-session-date">Friday, October 23, 2026 • 4:00 PM CT</p></div></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-primary js-recording" href="#join">Watch / Request the Intro</a><a class="btn btn-light js-join" href="#join">Get the Next Session Invite</a></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-primary js-join" href="#join">Reserve Your Free Seat</a><a class="btn btn-light js-recording" href="#join">Intro Session on Eventbrite</a></div>
         </div>
       </div>
     </section>
@@ -171,8 +168,18 @@
       <div class="wrap">
         <div class="section-head"><div class="eyebrow">Operators, not spectators</div><h2>Presented from the intersection of dentistry, operations, technology and transactions.</h2></div>
         <div class="presenters">
-          <article class="presenter"><div class="eyebrow">Clark Caflisch</div><h3>DSO operations, alliances, M&amp;A and dental technology</h3><p>Clark brings current and prior DSO operating leadership, Alliance formation and transaction experience, governance and integration expertise, and a long history in dental practice-management technology.</p></article>
-          <article class="presenter"><div class="eyebrow">Dr. Vajahat “VJ” Yar Khan</div><h3>Dentist-operator, scaled services and technology</h3><p>VJ brings the perspective of a practicing dentist and multi-location operator, along with experience building scaled revenue-cycle/back-office services and dental technology infrastructure.</p></article>
+          <article class="presenter">
+            <div class="presenter-photo"><img src="assets/clark-caflisch-2026.jpg" alt="Clark Caflisch" /></div>
+            <div class="eyebrow">Clark Caflisch</div>
+            <h3>DSO operations, alliances, M&amp;A and dental technology</h3>
+            <p>Clark brings current and prior DSO operating leadership, Alliance formation and transaction experience, governance and integration expertise, and a long history in dental practice-management technology.</p>
+          </article>
+          <article class="presenter">
+            <div class="presenter-photo"><img src="assets/vj-yar-khan-2026.jpg" alt="Dr. Vajahat VJ Yar Khan" /></div>
+            <div class="eyebrow">Dr. Vajahat “VJ” Yar Khan</div>
+            <h3>Dentist-operator, scaled services and technology</h3>
+            <p>VJ brings the perspective of a practicing dentist and multi-location operator, along with experience building scaled revenue-cycle/back-office services and dental technology infrastructure.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -186,8 +193,8 @@
 
     <section id="join">
       <div class="wrap cta">
-        <div><div class="eyebrow">Stay in the conversation</div><h2>Join the DentTalks Independence@Scale series.</h2><p>Attend the live sessions, receive the roadmap, and follow the curriculum as we examine what it takes to preserve independence while building the capabilities of scale.</p><div class="status" id="cta-status">Registration link can be connected to Google Forms, Calendly, HubSpot, GoHighLevel, Formspree or your preferred CRM.</div></div>
-        <div class="cta-actions"><a class="btn btn-primary js-join" href="#">Join the Series</a><a class="btn btn-secondary js-recording" href="#">Watch the Introduction</a><a class="btn btn-secondary js-business" href="#">Request a Separate Business Briefing</a></div>
+        <div><div class="eyebrow">Stay in the conversation</div><h2>Join the DentTalks Independence@Scale series.</h2><p>Attend the live sessions, receive the roadmap, and follow the curriculum as we examine what it takes to preserve independence while building the capabilities of scale.</p><div class="status" id="cta-status">Introductory session: Friday, September 18, 2026 • 4:00–5:00 PM CT on Zoom. Free with Eventbrite registration.</div></div>
+        <div class="cta-actions"><a class="btn btn-primary js-join" href="#">Reserve Your Free Seat</a><a class="btn btn-secondary js-recording" href="#">Intro Session on Eventbrite</a><a class="btn btn-secondary js-business" href="#">Request a Separate Business Briefing</a></div>
       </div>
     </section>
   </main>
