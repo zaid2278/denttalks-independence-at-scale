@@ -16,7 +16,7 @@ window.DENTTALKS_CONFIG = {
 
   // Next live session details shown on the page
   nextSessionTitle: "Episode 1 — The New Economics of Independent Dentistry",
-  nextSessionDate: "Date to be announced",
+  nextSessionDate: "Friday, October 23, 2026 • 4:00 PM CT",
 
   // Final public domain once purchased / connected (used for docs and future SEO)
   domain: "https://denttalks.com"
