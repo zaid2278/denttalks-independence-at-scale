@@ -25,7 +25,7 @@
     body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .wrap{width:min(1240px,calc(100% - 40px));margin:auto}
     .serif{font-family:Georgia,"Times New Roman",serif}
     .eyebrow{letter-spacing:.15em;text-transform:uppercase;font-size:.78rem;font-weight:800;color:var(--teal)}
     nav{position:sticky;top:0;z-index:20;background:rgba(7,26,46,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
@@ -43,18 +43,18 @@
     .btn[aria-disabled="true"]{opacity:.68;cursor:not-allowed;pointer-events:none}
     .hero{overflow:hidden;position:relative;background:
       radial-gradient(circle at 82% 18%,rgba(54,182,189,.18),transparent 24%),
-      linear-gradient(135deg,#06182a 0%,#0a2d49 72%,#123b5b 100%);color:white;padding:90px 0 72px}
+      linear-gradient(135deg,#06182a 0%,#0a2d49 72%,#123b5b 100%);color:white;padding:72px 0 64px}
     .hero:after{content:"";position:absolute;inset:auto -6% -160px auto;width:520px;height:520px;border:1px solid rgba(104,211,208,.18);border-radius:50%}
-    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,0.92fr) minmax(340px,1.08fr);gap:40px;align-items:center}
     .presented{display:inline-flex;align-items:center;gap:10px;color:#d7e8ef;margin-bottom:24px;font-weight:700}.presented strong{font-size:1.2rem;color:white}.presented:before{content:"";width:42px;height:2px;background:var(--teal)}
-    h1{font-size:clamp(3rem,7vw,6.25rem);line-height:.92;letter-spacing:-.045em;margin:0 0 20px;font-weight:500}
+    h1{font-size:clamp(2.6rem,5.8vw,4.8rem);line-height:.94;letter-spacing:-.045em;margin:0 0 18px;font-weight:500}
     h1 .at{color:var(--teal2)}
-    .hero h2{font-size:clamp(1.35rem,2.5vw,2.15rem);font-weight:600;color:var(--teal2);margin:0 0 24px}
-    .hero-quote{font-size:clamp(1.2rem,2.1vw,1.65rem);max-width:760px;margin:0 0 18px;padding-left:18px;border-left:3px solid var(--teal);color:#f6fbfd;font-family:Georgia,serif}
-    .hero p{font-size:1.05rem;color:#c9dbe4;max-width:720px;margin:0 0 30px}
+    .hero h2{font-size:clamp(1.25rem,2.2vw,1.85rem);font-weight:600;color:var(--teal2);margin:0 0 20px}
+    .hero-quote{font-size:clamp(1.1rem,1.9vw,1.45rem);max-width:560px;margin:0 0 16px;padding-left:18px;border-left:3px solid var(--teal);color:#f6fbfd;font-family:Georgia,serif}
+    .hero p{font-size:1.02rem;color:#c9dbe4;max-width:540px;margin:0 0 28px}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-flyer{border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 34px 90px rgba(0,0,0,.28);background:#06182a}
-    .hero-flyer img{width:100%;height:auto;display:block}
+    .hero-flyer{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 34px 90px rgba(0,0,0,.32);background:#06182a;width:100%;max-width:620px;margin-left:auto}
+    .hero-flyer img{width:100%;height:auto;display:block;vertical-align:middle}
     section{padding:86px 0}
     .section-head{max-width:780px;margin-bottom:42px}.section-head h2{font-size:clamp(2rem,4vw,3.45rem);line-height:1.05;letter-spacing:-.03em;margin:7px 0 14px}.section-head p{color:var(--muted);font-size:1.05rem}
     .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -73,10 +73,10 @@
     .boundary{background:linear-gradient(135deg,#eaf8f7,#f7fbfc);border:1px solid #c9e8e7;border-radius:30px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.boundary h3{margin:0 0 8px}.boundary p{margin:0;color:#526978}.boundary .business{border-left:1px solid #c4dfdf;padding-left:28px}
     .cta{background:linear-gradient(135deg,#071a2e,#0f3a59);color:white;border-radius:38px;padding:50px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;box-shadow:var(--shadow)}.cta h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.04;margin:7px 0 12px}.cta p{color:#c8dce4}.cta-actions{display:flex;flex-direction:column;gap:12px}.status{font-size:.83rem;color:#96b1c0;margin-top:8px}
     footer{padding:40px 0 54px;color:#718493;font-size:.88rem}.footer-row{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-row strong{color:var(--ink)}
-    @media(max-width:900px){.nav-links{display:none}.hero-grid,.intro-grid,.cta,.boundary{grid-template-columns:1fr}.hero-flyer{max-width:520px;margin-inline:auto}.grid4,.audience{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr}.presenters{grid-template-columns:1fr}.boundary .business{border-left:0;border-top:1px solid #c4dfdf;padding-left:0;padding-top:24px}}
-    @media(max-width:560px){.wrap{width:min(100% - 24px,var(--max))}.hero{padding:70px 0 54px}.grid4,.audience{grid-template-columns:1fr}.hero-actions{flex-direction:column}.btn{width:100%}.cta{padding:30px 24px}.presented:before{width:26px}section{padding:68px 0}.presenter-photo{max-height:300px}}
+    @media(max-width:900px){.nav-links{display:none}.hero-grid,.intro-grid,.cta,.boundary{grid-template-columns:1fr}.hero-flyer{max-width:640px;margin-inline:auto}.grid4,.audience{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr}.presenters{grid-template-columns:1fr}.boundary .business{border-left:0;border-top:1px solid #c4dfdf;padding-left:0;padding-top:24px}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,1240px)}.hero{padding:60px 0 48px}.grid4,.audience{grid-template-columns:1fr}.hero-actions{flex-direction:column}.btn{width:100%}.cta{padding:30px 24px}.presented:before{width:26px}section{padding:68px 0}.presenter-photo{max-height:300px}.hero-flyer{max-width:100%}}
   </style>
-  <script src="site-config.js" defer></script>
+  <script src="site-config.js?v=20260909" defer></script>
 </head>
 <body>
   <nav>
@@ -85,7 +85,7 @@
       <div class="nav-links">
         <a href="#about">Why now</a><a href="#roadmap">Roadmap</a><a href="#presenters">Presenters</a><a href="#join">Join</a>
       </div>
-      <a class="btn btn-primary js-join" href="#join">Reserve Your Free Seat</a>
+      <a class="btn btn-primary js-join" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Reserve Your Free Seat</a>
     </div>
   </nav>
 
@@ -99,7 +99,7 @@
           <div class="hero-quote">Independent does not have to mean being alone.</div>
           <p>A practical, education-first series for dental owners who want to understand scale, AI, automation, enterprise value, alliances, M&amp;A and strategic optionality—without giving up independent thinking.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary js-join" href="#join">Reserve Your Free Seat</a>
+            <a class="btn btn-primary js-join" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Reserve Your Free Seat</a>
             <a class="btn btn-secondary" href="#roadmap">Explore the 9-Month Roadmap</a>
           </div>
         </div>
@@ -147,7 +147,7 @@
           <p style="color:var(--muted)">The introductory DentTalks session covers how Independence@Scale works and the 18-episode roadmap. Episode 1 then begins the formal curriculum.</p>
           <div class="milestone"><div class="dot"></div><div><h4>Introductory Session — Friday, September 18, 2026</h4><p>4:00–5:00 PM CT on Zoom — how the platform works + the 18-episode roadmap.</p></div></div>
           <div class="milestone"><div class="dot"></div><div><h4 id="next-session-title">Episode 1 — The New Economics of Independent Dentistry</h4><p id="next-session-date">Friday, October 23, 2026 • 4:00 PM CT</p></div></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-primary js-join" href="#join">Reserve Your Free Seat</a><a class="btn btn-light js-recording" href="#join">Intro Session on Eventbrite</a></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-primary js-join" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Reserve Your Free Seat</a><a class="btn btn-light js-recording" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Intro Session on Eventbrite</a></div>
         </div>
       </div>
     </section>
@@ -194,7 +194,7 @@
     <section id="join">
       <div class="wrap cta">
         <div><div class="eyebrow">Stay in the conversation</div><h2>Join the DentTalks Independence@Scale series.</h2><p>Attend the live sessions, receive the roadmap, and follow the curriculum as we examine what it takes to preserve independence while building the capabilities of scale.</p><div class="status" id="cta-status">Introductory session: Friday, September 18, 2026 • 4:00–5:00 PM CT on Zoom. Free with Eventbrite registration.</div></div>
-        <div class="cta-actions"><a class="btn btn-primary js-join" href="#">Reserve Your Free Seat</a><a class="btn btn-secondary js-recording" href="#">Intro Session on Eventbrite</a><a class="btn btn-secondary js-business" href="#">Request a Separate Business Briefing</a></div>
+        <div class="cta-actions"><a class="btn btn-primary js-join" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Reserve Your Free Seat</a><a class="btn btn-secondary js-recording" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Intro Session on Eventbrite</a><a class="btn btn-secondary js-business" href="https://v.denttracks.com/" target="_blank" rel="noopener">Request a Separate Business Briefing</a></div>
       </div>
     </section>
   </main>
@@ -203,11 +203,23 @@
 
   <script>
     window.addEventListener('DOMContentLoaded',()=>{
-      const c=window.DENTTALKS_CONFIG||{};
-      const setup=(selector,url,label)=>document.querySelectorAll(selector).forEach(a=>{if(url){a.href=url;a.target='_blank';a.rel='noopener'}else{a.href='#join';a.setAttribute('aria-disabled','true');if(label)a.textContent=label}});
-      setup('.js-join',c.joinSeriesUrl,'Registration Opening Soon');
-      setup('.js-recording',c.introRecordingUrl,'Intro Recording Coming Soon');
-      setup('.js-business',c.businessBriefingUrl,'Business Briefing — By Request');
+      const defaults={
+        joinSeriesUrl:'https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471',
+        introRecordingUrl:'https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471',
+        businessBriefingUrl:'https://v.denttracks.com/',
+        nextSessionTitle:'Episode 1 — The New Economics of Independent Dentistry',
+        nextSessionDate:'Friday, October 23, 2026 • 4:00 PM CT'
+      };
+      const c={...defaults,...(window.DENTTALKS_CONFIG||{})};
+      const setup=(selector,url)=>{
+        if(!url)return;
+        document.querySelectorAll(selector).forEach(a=>{
+          a.href=url;a.target='_blank';a.rel='noopener';a.removeAttribute('aria-disabled');
+        });
+      };
+      setup('.js-join',c.joinSeriesUrl);
+      setup('.js-recording',c.introRecordingUrl);
+      setup('.js-business',c.businessBriefingUrl);
       if(c.nextSessionTitle)document.getElementById('next-session-title').textContent=c.nextSessionTitle;
       if(c.nextSessionDate)document.getElementById('next-session-date').textContent=c.nextSessionDate;
     });
