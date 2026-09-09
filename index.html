@@ -45,19 +45,19 @@
       radial-gradient(circle at 82% 18%,rgba(54,182,189,.18),transparent 24%),
       linear-gradient(135deg,#06182a 0%,#0a2d49 72%,#123b5b 100%);color:white;padding:72px 0 64px}
     .hero:after{content:"";position:absolute;inset:auto -6% -160px auto;width:520px;height:520px;border:1px solid rgba(104,211,208,.18);border-radius:50%}
-    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr);gap:40px;justify-items:center}
-    .hero-copy{width:100%;max-width:760px;text-align:center;justify-items:center}
-    .presented{display:inline-flex;align-items:center;justify-content:center;gap:10px;color:#d7e8ef;margin-bottom:24px;font-weight:700}.presented strong{font-size:1.2rem;color:white}.presented:before{content:"";width:42px;height:2px;background:var(--teal)}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr);gap:40px;justify-items:start}
+    .hero-copy{width:100%;max-width:780px;text-align:left}
+    .presented{display:inline-flex;align-items:center;justify-content:flex-start;gap:10px;color:#d7e8ef;margin-bottom:24px;font-weight:700}.presented strong{font-size:1.2rem;color:white}.presented:before{content:"";width:42px;height:2px;background:var(--teal)}
     h1{font-size:clamp(2.8rem,6vw,5.2rem);line-height:.94;letter-spacing:-.045em;margin:0 0 18px;font-weight:500}
     h1 .at{color:var(--teal2)}
     .hero h2{font-size:clamp(1.25rem,2.2vw,1.85rem);font-weight:600;color:var(--teal2);margin:0 0 20px}
-    .hero-quote{font-size:clamp(1.1rem,1.9vw,1.45rem);max-width:640px;margin:0 auto 16px;padding-left:18px;border-left:3px solid var(--teal);color:#f6fbfd;font-family:Georgia,serif;text-align:left}
-    .hero p{font-size:1.02rem;color:#c9dbe4;max-width:640px;margin:0 auto 28px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    .hero-flyer{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 34px 90px rgba(0,0,0,.32);background:#06182a;width:min(720px,100%);margin:0 auto}
+    .hero-quote{font-size:clamp(1.1rem,1.9vw,1.45rem);max-width:720px;margin:0 0 16px;padding-left:18px;border-left:3px solid var(--teal);color:#f6fbfd;font-family:Georgia,serif;text-align:left}
+    .hero p{font-size:1.02rem;color:#c9dbe4;max-width:720px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start}
+    .hero-flyer{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 34px 90px rgba(0,0,0,.32);background:#06182a;width:min(720px,100%);margin:0;justify-self:start}
     .hero-flyer img{width:100%;height:auto;display:block}
     section{padding:86px 0}
-    .section-head{max-width:780px;margin-bottom:42px}.section-head h2{font-size:clamp(2rem,4vw,3.45rem);line-height:1.05;letter-spacing:-.03em;margin:7px 0 14px}.section-head p{color:var(--muted);font-size:1.05rem}
+    .section-head{max-width:780px;margin:0 0 42px;text-align:left}.section-head h2{font-size:clamp(2rem,4vw,3.45rem);line-height:1.05;letter-spacing:-.03em;margin:7px 0 14px}.section-head p{color:var(--muted);font-size:1.05rem;margin:0}
     .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
     .info-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 12px 35px rgba(16,33,56,.05)}
     .info-card .num{font-family:Georgia,serif;color:var(--teal);font-size:2.1rem;margin-bottom:10px}.info-card h3{margin:0 0 8px;font-size:1.05rem}.info-card p{margin:0;color:var(--muted);font-size:.93rem}
@@ -67,15 +67,15 @@
     .phase .phase-no{display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:rgba(54,182,189,.18);color:var(--teal2);font-weight:900}
     .phase h3{font-size:1.35rem;margin:14px 0 8px}.phase>p{color:#a9c0ce;margin:0 0 20px;font-size:.92rem}
     .episodes{display:grid;gap:11px}.episode{padding:12px 0;border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:32px 1fr;gap:10px}.episode b{color:var(--teal2)}.episode span{color:#e4eef3;font-size:.91rem}
-    .intro-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:start;max-width:760px}.flyer{display:none}
+    .intro-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:start;max-width:780px;text-align:left}.flyer{display:none}
     .milestone{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}.milestone:first-of-type{border-top:none}.dot{width:12px;height:12px;border-radius:50%;margin-top:7px;background:var(--teal);box-shadow:0 0 0 6px rgba(54,182,189,.12)}.milestone h4{margin:0 0 4px}.milestone p{margin:0;color:var(--muted)}
     .audience{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.audience-card{border-radius:22px;padding:22px;background:linear-gradient(180deg,#fff,#f3f9fa);border:1px solid var(--line)}.audience-card h3{font-size:1rem;margin:0 0 7px}.audience-card p{font-size:.9rem;color:var(--muted);margin:0}
-    .presenters{display:grid;grid-template-columns:1fr 1fr;gap:20px}.presenter{background:white;border:1px solid var(--line);border-radius:26px;padding:22px;overflow:hidden}.presenter-photo{margin:-22px -22px 20px;aspect-ratio:4/5;max-height:340px;overflow:hidden;background:#0a2036}.presenter-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.presenter h3{margin:6px 0 8px;font-size:1.45rem}.presenter p{color:var(--muted);margin:0}
+    .presenters{display:grid;grid-template-columns:1fr 1fr;gap:20px}.presenter{background:white;border:1px solid var(--line);border-radius:26px;padding:28px;overflow:hidden;text-align:left;display:flex;flex-direction:column;align-items:stretch}.presenter-photo{width:min(220px,70%);aspect-ratio:4/5;margin:0 auto 22px;border-radius:20px;overflow:hidden;background:#0a2036;flex-shrink:0}.presenter-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.presenter .eyebrow{margin:0}.presenter h3{margin:6px 0 8px;font-size:1.45rem}.presenter p{color:var(--muted);margin:0}
     .boundary{background:linear-gradient(135deg,#eaf8f7,#f7fbfc);border:1px solid #c9e8e7;border-radius:30px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:28px}.boundary h3{margin:0 0 8px}.boundary p{margin:0;color:#526978}.boundary .business{border-left:1px solid #c4dfdf;padding-left:28px}
     .cta{background:linear-gradient(135deg,#071a2e,#0f3a59);color:white;border-radius:38px;padding:50px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;box-shadow:var(--shadow)}.cta h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.04;margin:7px 0 12px}.cta p{color:#c8dce4}.cta-actions{display:flex;flex-direction:column;gap:12px}.status{font-size:.83rem;color:#96b1c0;margin-top:8px}
     footer{padding:40px 0 54px;color:#718493;font-size:.88rem}.footer-row{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-row strong{color:var(--ink)}
     @media(max-width:900px){.nav-links{display:none}.hero-grid,.intro-grid,.cta,.boundary{grid-template-columns:1fr}.hero-flyer{width:min(640px,100%)}.grid4,.audience{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr}.presenters{grid-template-columns:1fr}.boundary .business{border-left:0;border-top:1px solid #c4dfdf;padding-left:0;padding-top:24px}}
-    @media(max-width:560px){.wrap{width:min(100% - 24px,1240px)}.hero{padding:60px 0 48px}.grid4,.audience{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:stretch}.btn{width:100%}.cta{padding:30px 24px}.presented:before{width:26px}section{padding:68px 0}.presenter-photo{max-height:300px}.hero-flyer{width:100%}.hero-quote{margin-left:0;margin-right:0}}
+    @media(max-width:560px){.wrap{width:min(100% - 24px,1240px)}.hero{padding:60px 0 48px}.grid4,.audience{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:stretch}.btn{width:100%}.cta{padding:30px 24px}.presented:before{width:26px}section{padding:68px 0}.presenter-photo{width:min(200px,72%)}.hero-flyer{width:100%}}
   </style>
   <script src="site-config.js?v=20260909" defer></script>
 </head>
@@ -140,16 +140,15 @@
     </section>
 
     <section id="launch">
-      <div class="wrap intro-grid">
-        <div class="flyer"><img src="assets/intro-webinar-flyer.jpg" alt="Independence@Scale introductory webinar flyer" /></div>
-        <div>
+      <div class="wrap">
+        <div class="section-head">
           <div class="eyebrow">Start here</div>
-          <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.06;margin:8px 0 14px">Start with the introduction. Then follow the full roadmap.</h2>
-          <p style="color:var(--muted)">The introductory DentTalks session covers how Independence@Scale works and the 18-episode roadmap. Episode 1 then begins the formal curriculum.</p>
-          <div class="milestone"><div class="dot"></div><div><h4>Introductory Session — Friday, September 18, 2026</h4><p>4:00–5:00 PM CT on Zoom — how the platform works + the 18-episode roadmap.</p></div></div>
-          <div class="milestone"><div class="dot"></div><div><h4 id="next-session-title">Episode 1 — The New Economics of Independent Dentistry</h4><p id="next-session-date">Friday, October 23, 2026 • 4:00 PM CT</p></div></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-primary js-join" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Reserve Your Free Seat</a><a class="btn btn-light js-recording" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Intro Session on Eventbrite</a></div>
+          <h2>Start with the introduction. Then follow the full roadmap.</h2>
+          <p>The introductory DentTalks session covers how Independence@Scale works and the 18-episode roadmap. Episode 1 then begins the formal curriculum.</p>
         </div>
+        <div class="milestone"><div class="dot"></div><div><h4>Introductory Session — Friday, September 18, 2026</h4><p>4:00–5:00 PM CT on Zoom — how the platform works + the 18-episode roadmap.</p></div></div>
+        <div class="milestone"><div class="dot"></div><div><h4 id="next-session-title">Episode 1 — The New Economics of Independent Dentistry</h4><p id="next-session-date">Friday, October 23, 2026 • 4:00 PM CT</p></div></div>
+        <div class="hero-actions" style="margin-top:24px"><a class="btn btn-primary js-join" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Reserve Your Free Seat</a><a class="btn btn-light js-recording" href="https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471" target="_blank" rel="noopener">Intro Session on Eventbrite</a></div>
       </div>
     </section>
 
