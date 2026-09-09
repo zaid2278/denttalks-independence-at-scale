@@ -19,5 +19,5 @@ window.DENTTALKS_CONFIG = {
   nextSessionDate: "Date to be announced",
 
   // Final public domain once purchased / connected (used for docs and future SEO)
-  domain: ""
+  domain: "https://denttalks.com"
 };
