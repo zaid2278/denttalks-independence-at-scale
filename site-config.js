@@ -4,10 +4,15 @@
  */
 window.DENTTALKS_CONFIG = {
   // Independence@Scale intro session recording
-  // Paste a Google Drive share link or YouTube URL, e.g.
-  // "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
-  // File must be shared as: Anyone with the link → Viewer
+  // Prefer a direct MP4 or YouTube URL for reliable mobile playback.
+  // Google Drive embeds work on desktop; mobile browsers often block/break them.
+  // Examples:
+  //   introRecordingUrl: "https://www.youtube.com/watch?v=VIDEO_ID"  (unlisted is fine)
+  //   introRecordingMp4Url: "https://cdn.example.com/intro.mp4"
+  //   introRecordingUrl: "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
   introRecordingUrl: "https://drive.google.com/file/d/1n8868VQ4DntWK_71wWW7rdvE09KXLe_i/view?usp=sharing",
+  introRecordingYoutubeUrl: "",
+  introRecordingMp4Url: "",
 
   // Registration for live sessions
   joinSeriesUrl: "https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471",

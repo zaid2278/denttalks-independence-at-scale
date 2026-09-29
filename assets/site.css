@@ -60,10 +60,23 @@
 
     .featured{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;margin-bottom:28px}
     .feature-card,.media-card{background:var(--card);border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.8);box-shadow:var(--shadow)}
-    .feature-media{position:relative;aspect-ratio:16/10;background:#1b1238}
-    .feature-media iframe,.feature-media img{width:100%;height:100%;object-fit:cover;border:0}
-    .feature-media .placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:#fff;background:
-      linear-gradient(180deg,rgba(27,18,56,.2),rgba(27,18,56,.85)),url("assets/intro-webinar-flyer-card.jpg") center/cover;width:100%;border:0;cursor:pointer;font:inherit}
+    .feature-media{position:relative;aspect-ratio:16/9;background:#0b0718;overflow:hidden;border-radius:0}
+    .feature-media iframe,.feature-media .intro-video{
+      position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;display:block
+    }
+    .feature-media .intro-video{object-fit:contain}
+    .feature-media .placeholder,.feature-media .player-link{
+      position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:#fff;
+      background:linear-gradient(180deg,rgba(27,18,56,.45),rgba(27,18,56,.92)),url("assets/intro-webinar-flyer-card.jpg") center/cover;
+      width:100%;border:0;cursor:pointer;font:inherit;text-decoration:none
+    }
+    .feature-media.is-playing{background:#000}
+    .player-poster{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:28rem;padding:0 12px}
+    .player-poster-copy{display:grid;gap:8px;justify-items:center}
+    .player-poster-copy .badge{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.2)}
+    .player-poster-copy strong{font-family:var(--font);font-size:clamp(1.15rem,3.5vw,1.45rem);line-height:1.25}
+    .player-poster-copy span{opacity:.88;font-size:.92rem}
+    .player-play{width:64px;height:64px;border-radius:50%;background:var(--primary);display:grid;place-items:center;font-size:1.2rem;box-shadow:0 12px 30px rgba(0,0,0,.35)}
     .feature-body{padding:22px}
     .feature-body .meta,.card-meta{display:flex;flex-wrap:wrap;gap:8px 12px;color:var(--muted);font-size:.82rem;margin-bottom:10px}
     .badge{display:inline-flex;align-items:center;background:rgba(108,51,255,.12);color:var(--primary);border-radius:999px;padding:4px 10px;font-size:.75rem;font-weight:800}
@@ -145,7 +158,35 @@
       .wrap{width:min(100% - 24px,var(--max))}
       .hero-panel{padding:36px 22px}
       .grid,.grid-4,.presenters{grid-template-columns:1fr}
-      .nav{padding:10px 12px}
-      .btn{width:100%}
+      .nav{padding:10px 12px;gap:10px}
+      .nav-actions .btn{width:auto;padding:10px 12px;font-size:.78rem;white-space:nowrap}
+      .feature-media{aspect-ratio:16/9;min-height:240px;height:auto}
+      .feature-media.is-playing{min-height:min(56vw, 320px)}
+      .feature-body .card-actions{flex-direction:column;align-items:stretch}
+      .feature-body .card-actions .btn{width:100%}
+      .player-play{width:72px;height:72px;font-size:1.35rem}
+      .player-poster-copy strong{font-size:1.2rem}
+      .media{padding-bottom:96px}
+      .cta-band{padding:24px}
+      .cta-band .btn{width:100%}
       .tabs{width:100%;border-radius:18px}
+    }
+
+    .page-player{
+      position:fixed;inset:0;z-index:12000;background:#000;
+      display:flex;flex-direction:column
+    }
+    .page-player[hidden]{display:none!important}
+    .page-player-bar{
+      flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:12px 14px;background:#111;color:#fff
+    }
+    .page-player-bar strong{font-family:var(--font);font-size:.95rem}
+    .page-player-close{
+      width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.12);
+      color:#fff;font-size:1.4rem;cursor:pointer;line-height:1
+    }
+    .page-player-frame{flex:1;position:relative;min-height:0;background:#000}
+    .page-player-frame iframe,.page-player-frame video{
+      position:absolute;inset:0;width:100%;height:100%;border:0;background:#000
     }

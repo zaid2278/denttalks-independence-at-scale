@@ -73,18 +73,105 @@ function cardSeries(item, cfg){
   </article>`;
 }
 
-function setCta(cta, href, label){
-  cta.href = href; cta.target = '_blank'; cta.rel = 'noopener'; cta.textContent = label;
+function setCta(cta, href, label, {external=true}={}){
+  cta.href = href || '#series';
+  cta.textContent = label;
+  if(external){
+    cta.target = '_blank';
+    cta.rel = 'noopener';
+  } else {
+    cta.removeAttribute('target');
+    cta.removeAttribute('rel');
+  }
 }
 
-function mountPlayer(mediaEl, src, title, allow){
-  mediaEl.innerHTML = `<iframe src="${src}" title="${title}" allow="${allow}" allowfullscreen loading="lazy"></iframe>`;
+const drivePreviewUrl = (id) => `https://drive.google.com/file/d/${id}/preview`;
+const needsExpandedPlayer = () => window.matchMedia('(max-width: 900px), (hover: none) and (pointer: coarse)').matches;
+
+function posterHTML(badge, title, hint){
+  return `<div class="player-poster">
+    <div class="player-poster-copy">
+      <div class="badge">${badge}</div>
+      <strong>${title}</strong>
+      <span>${hint}</span>
+    </div>
+    <span class="player-play" aria-hidden="true">▶</span>
+  </div>`;
+}
+
+function iframeMarkup(src, title){
+  return `<iframe
+    src="${src}"
+    title="${title}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+    allowfullscreen
+    webkitallowfullscreen
+    mozallowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"
+    loading="eager"></iframe>`;
+}
+
+function openPagePlayer(src, title){
+  const frame = $('page-player-frame');
+  if(!frame) return;
+  frame.innerHTML = iframeMarkup(src, title);
+  setOverlay('page-player', true);
+}
+
+function closePagePlayer(){
+  const frame = $('page-player-frame');
+  if(frame) frame.innerHTML = '';
+  setOverlay('page-player', false);
+}
+
+function mountIframe(mediaEl, src, title){
+  mediaEl.classList.add('is-playing');
+  if(needsExpandedPlayer()){
+    mediaEl.innerHTML = `<button type="button" class="placeholder js-load-intro" aria-label="Return to player">${posterHTML('Now playing', 'Intro recording', 'Tap to return to full-screen player')}</button>`;
+    openPagePlayer(src, title);
+    return;
+  }
+  mediaEl.innerHTML = iframeMarkup(src, title);
+}
+
+function mountHtml5(mediaEl, src, poster){
+  mediaEl.classList.add('is-playing');
+  mediaEl.innerHTML = `<video class="intro-video" controls playsinline webkit-playsinline preload="metadata" poster="${poster||FLYER}">
+    <source src="${src}" type="video/mp4" />
+  </video>`;
+  const video = mediaEl.querySelector('video');
+  const playPromise = video.play();
+  if(playPromise && playPromise.catch) playPromise.catch(() => {});
+  return video;
+}
+
+function bindIntroPlay(mediaEl, cta, playFn, label){
+  let started = false;
+  let lastSrc = '';
+  const run = () => {
+    if(started){
+      if(needsExpandedPlayer() && lastSrc) openPagePlayer(lastSrc, 'Independence@Scale intro');
+      else mediaEl.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    started = true;
+    playFn((src) => { lastSrc = src || ''; });
+  };
+  mediaEl.innerHTML = `<button type="button" class="placeholder js-load-intro" aria-label="${label}">${posterHTML('Recording', label, 'Tap to play on this page')}</button>`;
+  mediaEl.querySelector('.js-load-intro').addEventListener('click', run);
+  setCta(cta, '#series', 'Watch Recording', {external:false});
+  cta.onclick = (e) => {
+    e.preventDefault();
+    run();
+  };
 }
 
 function renderIntro(cfg, media){
   const intro = (media.series||[]).find(s => s.useIntroRecording) || media.series?.[0];
   const url = cfg.introRecordingUrl || '';
-  const youTube = ytId(url), gdrive = driveId(url);
+  const mp4 = cfg.introRecordingMp4Url || '';
+  const youTube = ytId(url) || ytId(cfg.introRecordingYoutubeUrl || '');
+  const gdrive = driveId(url);
   const mediaEl = $('intro-media'), cta = $('intro-cta');
   if(intro){
     $('intro-title').textContent = intro.title;
@@ -92,28 +179,26 @@ function renderIntro(cfg, media){
     $('intro-date').textContent = intro.date;
   }
 
-  const showPoster = (loadFn, label) => {
-    mediaEl.innerHTML = `<button type="button" class="placeholder js-load-intro" aria-label="${label}">
-      <div><div class="badge" style="margin-bottom:12px">Recording</div><strong>${label}</strong><div style="margin-top:8px;opacity:.85;font-size:.92rem">Tap to play</div></div>
-    </button>`;
-    mediaEl.querySelector('.js-load-intro').addEventListener('click', loadFn, {once:true});
-    setCta(cta, url || '#', 'Watch Recording');
-    cta.addEventListener('click', (e) => {
-      if(mediaEl.querySelector('iframe')) return;
-      e.preventDefault();
-      loadFn();
-    }, {once:true});
-  };
-
-  if(youTube){
-    showPoster(() => mountPlayer(mediaEl, `https://www.youtube.com/embed/${youTube}?autoplay=1`, 'Independence@Scale intro', IFRAME_ALLOW), 'Play intro recording');
+  // Prefer direct MP4 (best mobile in-page), then YouTube, then Drive embed — all stay on this page
+  if(mp4){
+    bindIntroPlay(mediaEl, cta, () => mountHtml5(mediaEl, mp4, FLYER), 'Play intro recording');
+  } else if(youTube){
+    const embed = `https://www.youtube.com/embed/${youTube}?autoplay=1&playsinline=1&rel=0`;
+    bindIntroPlay(mediaEl, cta, (remember) => {
+      remember(embed);
+      mountIframe(mediaEl, embed, 'Independence@Scale intro');
+    }, 'Play intro recording');
   } else if(gdrive){
-    showPoster(() => mountPlayer(mediaEl, `https://drive.google.com/file/d/${gdrive}/preview`, 'Independence@Scale intro', 'autoplay'), 'Play intro recording');
+    const embed = drivePreviewUrl(gdrive);
+    bindIntroPlay(mediaEl, cta, (remember) => {
+      remember(embed);
+      mountIframe(mediaEl, embed, 'Independence@Scale intro');
+    }, 'Play intro recording');
   } else if(url){
-    mediaEl.innerHTML = `<a class="placeholder" href="${url}" target="_blank" rel="noopener"><div><div class="badge" style="margin-bottom:12px">Recording ready</div><strong>Open intro session recording</strong></div></a>`;
+    mediaEl.innerHTML = `<a class="placeholder player-link" href="${url}" target="_blank" rel="noopener">${posterHTML('Recording ready', 'Open intro session recording', 'Opens recording')}</a>`;
     setCta(cta, url, 'Open Recording');
   } else {
-    mediaEl.innerHTML = `<div class="placeholder"><div><div class="badge" style="margin-bottom:12px">Intro session</div><strong>Paste the Google Drive link in site-config.js</strong><div style="margin-top:8px;opacity:.85;font-size:.92rem">Share the file as “Anyone with the link can view.”</div></div></div>`;
+    mediaEl.innerHTML = `<div class="placeholder">${posterHTML('Intro session', 'Add introRecordingUrl in site-config.js', 'Share Drive file as Anyone with the link')}</div>`;
     setCta(cta, cfg.joinSeriesUrl || '#', 'Reserve on Eventbrite');
   }
 }
@@ -235,13 +320,14 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     if(e.target.id === 'modal-close' || e.target.id === 'video-modal') closeVideoModal();
     if(e.target.id === 'poster-close' || e.target.id === 'poster-modal') closePosterModal();
+    if(e.target.id === 'page-player-close') closePagePlayer();
     const tab = e.target.closest('.tab[data-tab]');
     if(tab){ setTab(tab.dataset.tab, {scroll:true}); return; }
     const nav = e.target.closest('a[href="#series"],a[href="#podcasts"],a[href="#blogs"]');
     if(nav){ e.preventDefault(); setTab(nav.getAttribute('href').slice(1), {scroll:true}); }
   });
   document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape'){ closeVideoModal(); closePosterModal(); }
+    if(e.key === 'Escape'){ closeVideoModal(); closePosterModal(); closePagePlayer(); }
   });
 
   const hash = (location.hash||'').replace('#','');
