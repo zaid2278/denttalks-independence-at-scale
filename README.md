@@ -1,42 +1,44 @@
-# DentTalks presents Independence@Scale
+# DentTalks Media (DentTracks)
 
-Static one-page website for the DentTalks **Independence@Scale** educational series.
+Static media platform for **DentTracks** content — Independence@Scale series, podcasts/masterclasses, and DentTracks blogs.
 
-## Project contents
+## Stack
 
-| File / folder | Purpose |
-| --- | --- |
-| `index.html` | Full landing page |
-| `site-config.js` | Live links and next-session details |
-| `assets/` | Presenter photo and intro flyer |
-| `README_DEPLOY.md` | Hostinger / Cloudflare / Netlify deploy notes |
+- `index.html` — DentTracks-styled media UI (tabs + cards)
+- `site-config.js` — live URLs + media catalog (series, podcasts, blogs)
+- `assets/` — presenters + flyer art
+
+## Configure the intro recording
+
+In `site-config.js`, set:
+
+```js
+introRecordingUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+```
+
+Until that is set, the Independence@Scale featured card prompts Eventbrite registration.
 
 ## Local preview
-
-From this folder:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Open [http://localhost:8080](http://localhost:8080).
+Open http://localhost:8080
 
-## Before Hostinger deploy
+## Hostinger deploy
 
-1. Edit `site-config.js` and add real URLs for join / recording / business briefing.
-2. Replace placeholder images in `assets/` with the final:
-   - `clark-caflisch-2026.png`
-   - `intro-webinar-flyer.png`
-3. Optionally set `domain` and add a canonical URL in `index.html`.
-
-## Hostinger upload checklist
-
-Upload these into the site’s `public_html` folder:
+Upload to `public_html`:
 
 - `index.html`
 - `site-config.js`
 - `assets/` (entire folder)
+- `blog/` (entire folder — local article pages)
 
-Keep `index.html` at the root of `public_html`, enable SSL, and point the domain at the Hostinger site.
+Then clear Hostinger / Cloudflare cache.
 
-See `README_DEPLOY.md` for fuller hosting options.
+## Tabs
+
+1. **Independence@Scale** — intro recording + next live session + presenters  
+2. **Podcasts** — DentTracks / DentTalks YouTube episodes  
+3. **Blogs** — DentTracks insight articles  
