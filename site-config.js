@@ -38,7 +38,7 @@ window.DENTTALKS_MEDIA = {
       cta: "Watch Recording",
       secondaryCta: "Reserve Next Session",
       secondaryUrlKey: "joinSeriesUrl",
-      thumb: "assets/intro-webinar-flyer.jpg"
+      thumb: "assets/intro-webinar-flyer-card.jpg"
     },
     {
       id: "ep-01",
@@ -50,7 +50,7 @@ window.DENTTALKS_MEDIA = {
       duration: "Live on Zoom",
       urlKey: "joinSeriesUrl",
       cta: "Reserve Your Free Seat",
-      thumb: "assets/intro-webinar-flyer.jpg"
+      thumb: "assets/intro-webinar-flyer-card.jpg"
     }
   ],
   podcasts: [
@@ -340,7 +340,7 @@ window.DENTTALKS_MEDIA = {
         "author": "DentTracks Team",
         "meta": "October 10, 2025 · 2 min read",
         "cta": "Read Article",
-        "thumb": "assets/blog-thumbs/elevate-your-patient-experience-with-denttracks.png"
+        "thumb": "assets/blog-thumbs/elevate-your-patient-experience-with-denttracks.jpg"
     },
     {
         "id": "how-ai-powered-cloud-based-dental-software-is-optimizing-your-practice",

@@ -15,12 +15,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" /></noscript>
   <link rel="icon" href="assets/denttalks-logo.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/denttalks-logo.png" />
+  <link rel="preload" as="image" href="assets/denttalks-logo.png" />
   <link rel="stylesheet" href="assets/site.css" />
   <script src="site-config.js?v=20260929" defer></script>
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.js?v=20260929b" defer></script>
 </head>
 <body>
   <div class="topbar">
@@ -33,7 +35,7 @@
   <div class="nav-shell">
     <div class="wrap">
       <nav class="nav" aria-label="Primary">
-        <a class="brand" href="#top"><img class="brand-logo" src="assets/denttalks-logo.png" alt="" /><span class="brand-text">Dent<span class="accent">Talks</span></span></a>
+        <a class="brand" href="#top"><img class="brand-logo" src="assets/denttalks-logo.png" alt="" width="42" height="42" decoding="async" /><span class="brand-text">Dent<span class="accent">Talks</span></span></a>
         <div class="nav-links">
           <a href="#series" data-nav="series">Independence@Scale</a>
           <a href="#podcasts" data-nav="podcasts">Podcasts</a>
@@ -122,13 +124,13 @@
 
           <div class="presenters" id="presenters">
             <article class="presenter">
-              <div class="presenter-photo"><img src="assets/clark-caflisch-2026.jpg" alt="Clark Caflisch" /></div>
+              <div class="presenter-photo"><img src="assets/clark-caflisch-2026.jpg" alt="Clark Caflisch" width="360" height="450" loading="lazy" decoding="async" /></div>
               <div class="eyebrow">Clark Caflisch</div>
               <h3>DSO operations, alliances, M&amp;A and dental technology</h3>
               <p>Clark brings current and prior DSO operating leadership, Alliance formation and transaction experience, governance and integration expertise, and a long history in dental practice-management technology.</p>
             </article>
             <article class="presenter">
-              <div class="presenter-photo"><img src="assets/vj-yar-khan-2026.jpg" alt="Dr. Vajahat VJ Yar Khan" /></div>
+              <div class="presenter-photo"><img src="assets/vj-yar-khan-2026.jpg" alt="Dr. Vajahat VJ Yar Khan" width="360" height="450" loading="lazy" decoding="async" /></div>
               <div class="eyebrow">Dr. Vajahat “VJ” Yar Khan</div>
               <h3>Dentist-operator, scaled services and technology</h3>
               <p>VJ brings the perspective of a practicing dentist and multi-location operator, along with experience building scaled revenue-cycle/back-office services and dental technology infrastructure.</p>
