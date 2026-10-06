@@ -27,12 +27,35 @@ If the URLs are left blank, the site automatically shows a non-broken "coming so
 Put these files in a GitHub repository and connect the repository to Cloudflare Pages. There is no build command and the output directory is the repository root.
 
 ## 3. Hostinger
+
+### Manual upload
 1. Open **Websites → Manage → File Manager**.
 2. Open the site's `public_html` folder.
-3. Upload `index.html`, `site-config.js`, and the `assets` folder.
+3. Upload `index.html`, `site-config.js`, and the `assets` folder (plus `blog/` if changed).
 4. Make sure `index.html` is directly in `public_html`.
 5. Point the purchased domain to the Hostinger site.
 6. Enable the included SSL certificate.
+
+### Auto-deploy from GitHub (recommended)
+Hostinger’s built-in **Advanced → GIT** can be temporarily unavailable. Use GitHub Actions + FTP instead.
+
+1. In hPanel go to **Files → FTP Accounts** (or **Websites → denttalks.com → Files → FTP**).
+2. Create/note an FTP account whose home points at the site (or use the main account).
+3. Copy: **FTP hostname/IP**, **username**, **password**. Confirm whether plain FTP (port 21) or FTPS is required.
+4. On GitHub open the repo → **Settings → Secrets and variables → Actions → New repository secret** and add:
+
+| Secret | Example / notes |
+| --- | --- |
+| `FTP_SERVER` | Hostname or IP from hPanel (often `ftp.denttalks.com` or `*.hostingersite.com`) |
+| `FTP_USERNAME` | FTP username |
+| `FTP_PASSWORD` | FTP password |
+
+Optional: if Hostinger requires FTPS or a different remote path, edit `.github/workflows/deploy-hostinger.yml` (`protocol` / `port` / `server-dir`). Default remote path is `/public_html/`.
+
+5. Push to `main` (or run **Actions → Deploy to Hostinger → Run workflow**).
+6. Check the Actions run log. Live site should match the repo after a successful deploy (hard-refresh / purge Cloudflare if you use it).
+
+The workflow file is `.github/workflows/deploy-hostinger.yml`. It uploads the site root and skips `.git`, `.github`, `dist`, and README files.
 
 ## 4. Domain strategy
 Because DentTalks is the education/media brand, the cleanest long-term architecture is usually:
