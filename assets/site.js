@@ -59,11 +59,12 @@ function cardBlog(item){
 
 function cardSeries(item, cfg){
   const href = item.url || cfg[item.urlKey] || cfg.joinSeriesUrl || '#';
-  const poster = item.thumb || FLYER;
+  const thumb = item.thumb || FLYER;
+  const fullPoster = item.poster || FLYER;
   return `<article class="media-card">
-    <a class="thumb js-open-poster" href="${poster}" data-poster="${poster}" aria-label="Open full poster for ${item.title}">
+    <a class="thumb js-open-poster" href="${fullPoster}" data-poster="${fullPoster}" aria-label="Open full poster for ${item.title}">
       <span class="thumb-tag badge">${item.badge}</span>
-      <img src="${poster}" alt="Event poster" loading="lazy" decoding="async" width="640" height="400" />
+      <img src="${thumb}" alt="Event poster" loading="lazy" decoding="async" width="640" height="400" />
     </a>
     <div class="body">
       <div class="card-meta"><span>${item.date||''}</span><span>${item.duration||''}</span></div>
@@ -225,6 +226,8 @@ function closeVideoModal(){
 function openPosterModal(src){
   $('poster-image').src = src || FLYER;
   setOverlay('poster-modal', true);
+  const overlay = $('poster-modal');
+  if(overlay) overlay.scrollTop = 0;
 }
 
 function closePosterModal(){ setOverlay('poster-modal', false); }
