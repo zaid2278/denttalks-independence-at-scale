@@ -177,6 +177,7 @@ function renderIntro(cfg, media){
     $('intro-title').textContent = intro.title;
     $('intro-desc').textContent = intro.description;
     $('intro-date').textContent = intro.date;
+    if($('intro-duration') && intro.duration) $('intro-duration').textContent = intro.duration;
   }
 
   // Prefer direct MP4 (best mobile in-page), then YouTube, then Drive embed — all stay on this page

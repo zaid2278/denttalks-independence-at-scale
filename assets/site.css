@@ -131,7 +131,11 @@
     .overlay{position:fixed;inset:0;backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
     .overlay.open{display:flex}
     .modal-overlay{background:rgba(8,6,20,.72);z-index:80}
-    .poster-overlay{background:rgba(8,6,20,.82);z-index:90;padding:24px}
+    .poster-overlay{
+      background:rgba(8,6,20,.82);z-index:90;padding:16px;
+      align-items:flex-start;justify-content:center;
+      overflow-y:auto;-webkit-overflow-scrolling:touch
+    }
     .modal{width:min(920px,100%);background:#15101f;color:#fff;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08)}
     .modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:18px 20px 12px}
     .modal-head h3{margin:0;font-family:var(--font);font-size:1.05rem;line-height:1.35}
@@ -143,10 +147,17 @@
     .modal-foot{padding:16px 20px 20px;background:#1b1528}
     .modal-foot p{margin:0 0 12px;color:rgba(255,255,255,.78);font-size:.95rem}
     .modal-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:rgba(255,255,255,.55);font-size:.85rem}
-    .poster-dialog{position:relative;width:min(920px,100%);max-height:min(92vh,1100px);background:#0f0b1c;border-radius:18px;overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)}
-    .poster-dialog img{width:100%;height:auto}
-    .poster-close{position:absolute;top:12px;right:12px;z-index:2;background:rgba(0,0,0,.55);width:40px;height:40px;border-radius:50%;font-size:1.35rem}
-    .poster-close:hover{background:rgba(0,0,0,.75)}
+    .poster-dialog{
+      position:relative;width:min(820px,100%);max-width:100%;
+      margin:0 auto 32px;background:#0f0b1c;border-radius:18px;
+      overflow:visible;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1)
+    }
+    .poster-dialog img{width:100%;height:auto;display:block}
+    .poster-close{
+      position:sticky;top:12px;float:right;margin:12px 12px 0 0;
+      z-index:2;background:rgba(0,0,0,.65);width:40px;height:40px;border-radius:50%;font-size:1.35rem
+    }
+    .poster-close:hover{background:rgba(0,0,0,.8)}
     a.thumb.js-open-poster{cursor:zoom-in}
 
     @media(max-width:1000px){
