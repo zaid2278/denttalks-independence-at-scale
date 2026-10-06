@@ -37,7 +37,7 @@ window.DENTTALKS_MEDIA = {
       title: "Introductory Session — How the Platform Works + 18-Episode Roadmap",
       description: "Dr. Vajahat “VJ” Yar Khan and Clark Caflisch introduce Independence@Scale, why the model is being built, and the full DentTalks curriculum for independent owners.",
       date: "September 18, 2026",
-      duration: "60 min",
+      duration: "72 min",
       // Uses DENTTALKS_CONFIG.introRecordingUrl when set
       useIntroRecording: true,
       cta: "Watch Recording",
