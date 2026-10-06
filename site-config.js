@@ -10,12 +10,12 @@ window.DENTTALKS_CONFIG = {
   //   introRecordingUrl: "https://www.youtube.com/watch?v=VIDEO_ID"  (unlisted is fine)
   //   introRecordingMp4Url: "https://cdn.example.com/intro.mp4"
   //   introRecordingUrl: "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
-  introRecordingUrl: "https://drive.google.com/file/d/1n8868VQ4DntWK_71wWW7rdvE09KXLe_i/view?usp=sharing",
-  introRecordingYoutubeUrl: "",
+  introRecordingUrl: "https://www.youtube.com/watch?v=wkEGFBRWj74",
+  introRecordingYoutubeUrl: "https://www.youtube.com/watch?v=wkEGFBRWj74",
   introRecordingMp4Url: "",
 
-  // Registration for live sessions
-  joinSeriesUrl: "https://www.eventbrite.com/e/denttalks-independence-scale-intro-tickets-1999791587471",
+  // Registration for live sessions (from current CE flyer)
+  joinSeriesUrl: "https://us02web.zoom.us/meeting/register/Zc8qkcPFSkahWJo2zysfUA",
 
   // Separate business briefing
   businessBriefingUrl: "https://v.denttracks.com/",
